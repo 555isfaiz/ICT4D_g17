@@ -1,0 +1,41 @@
+<vxml version="2.1">
+
+    <catch event="choice_region"> 
+        <assign name="region" expr="_message"/>
+        <goto next="#weather"/>
+    </catch>
+
+    <menu id="region"  dtmf="true">
+        <prompt>
+            To select region A, Press 1
+            <break time="500"/>
+            To select Region B, Press 2
+            <break time="500"/>
+        </prompt>
+        <choice event="choice_region" message="A"></choice> 
+        <choice event="choice_region" message="B"></choice>
+    </menu>
+
+    <form id="weather">
+        <block>
+            <prompt>
+                You have chosen region <value expr="region"/>.
+                <break time="500"/>
+                The weather in this region should now be fetched by a called to our backend.
+                <break time="1000"/>
+            </prompt>
+            <goto next="#suggestion"/>
+        </block>
+    </form>
+
+    <form id="suggestion">
+        <block>
+            <prompt>
+                Fetching crop suggestion for region <value expr="region"/>.
+                <break time="500"/>
+                The crop suggestion in this region should now be fetched by a called to our backend.
+            </prompt>
+        </block>
+    </form>
+
+</vxml>

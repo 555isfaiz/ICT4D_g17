@@ -1,0 +1,18 @@
+<vxml version="2.1">
+
+    <menu id="language" dtmf="true">
+        <prompt> Hi, Welcome to eye see tea four dee. For English, press 1. For French, press 2. </prompt>
+        <choice next="http://webhosting.voxeo.net/208889/www/menu_en.xml"/>
+        <choice next="#franch"/>
+    </menu>
+    <form id="franch">
+        <block>
+         <prompt>
+          Franch is currently not supported, so here's a sound file test.
+          <break time="500"/>
+          <audio src="https://ia800605.us.archive.org/8/items/NeverGonnaGiveYouUp/jocofullinterview41.mp3"/>
+         </prompt>
+        </block>
+       </form>
+
+</vxml>
