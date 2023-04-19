@@ -2,13 +2,12 @@ from flask import Flask, request, Request, jsonify
 import json
 import sys
 from suggestion_db import query_suggestion
-import weather
 import requests
 
 
 app = Flask(__name__)
 api_key = '9548a6803dc1bb21607ca8df16793289'  # replace with your actual API key
-city_name = ''
+city_name = 'Tingoli'
 
 @app.route('/weather/<city>', methods = ["GET"])
 def get_weather(city:str):
