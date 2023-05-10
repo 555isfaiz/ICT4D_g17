@@ -10,12 +10,12 @@
 
     <menu id="region"  dtmf="true">
         <prompt>
-            To select region A, Press 1
+            To select Tingoli, Press 1
             <break time="500ms"/>
             To select Region B, Press 2
             <break time="500ms"/>
         </prompt>
-        <choice event="choice_region" message="A"></choice> 
+        <choice event="choice_region" message="Tingoli"></choice> 
         <choice event="choice_region" message="B"></choice>
     </menu>
 
@@ -24,7 +24,7 @@
             <prompt>
                 You have chosen region <value expr="region"/>.
                 <break time="500ms"/>
-                The weather in this region should now be fetched by a called to our backend.
+                <submit next="'http://16.171.45.123/vxml/weather/' + region" namelist="" method="get"/>
                 <break time="1000ms"/>
             </prompt>
             <goto next="#suggestion"/>

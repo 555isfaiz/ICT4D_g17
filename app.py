@@ -21,6 +21,22 @@ def get_weather(city:str):
     else:
         return 'Error', response.status_code
 
+@app.route('/vxml/weather/<city>', methods = ['GET'])
+def vxml_get_weather(city: str):
+    api_url = f'https://api.openweathermap.org/data/2.5/forecast?q={city},GH&cnt=9&appid={api_key}'
+    response = requests.get(api_url)
+    if response.status_code == 200:
+        data = response.json()
+        tomorrow_weather = data["list"][8]["weather"][0]["main"]
+    else:
+        tomorrow_weather = 'Error'
+
+    with open('templates/weather_response.xml', 'r') as f:
+        xml_str = f.read()
+        xml_str = xml_str.format(weather=tomorrow_weather)
+        return xml_str
+    
+
 @app.route('/suggestion/<weather>/<plant>/<language>', methods = ["GET"])
 def get_suggestion(weather:int, plant:int, language:int):
     sug = query_suggestion(weather=weather, plant=plant, language=language)
