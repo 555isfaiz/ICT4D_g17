@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml xmlns="http://www.w3.org/2001/vxml"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.w3.org/2001/vxml https://www.w3.org/TR/voicexml20/vxml.xsd" version="2.0" >
+ xsi:schemaLocation="http://www.w3.org/2001/vxml https://www.w3.org/TR/voicexml20/vxml.xsd"  version="2.0" >
 
     <menu id="language" dtmf="true">
         <prompt> Hi, Welcome to eye see tea four dee. For English, press 1. For French, press 2. </prompt>
-        <choice next="https://ict4d-vxml-tester-2023.s3.amazonaws.com/media/uploads/sj/88/menu_en.xml"/>
+        <choice next="https://ict4d-vxml-tester-2023.s3.amazonaws.com/media/uploads/sj/90/menu_en.xml"/>
         <choice next="#franch"/>
     </menu>
     <form id="franch">
         <block>
          <prompt>
-          Franch is currently not supported, so here's a sound file test.
+          Franch is currently not supported because the fucking audio isn't working on this platform
           <break time="500ms"/>
-          <audio src="https://ict4d-vxml-tester-2023.s3.amazonaws.com/media/uploads/sj/85/chosenRegion.wav"/>
          </prompt>
         </block>
        </form>

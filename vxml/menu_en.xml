@@ -1,44 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml xmlns="http://www.w3.org/2001/vxml"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.w3.org/2001/vxml https://www.w3.org/TR/voicexml20/vxml.xsd" version="2.0" >
-
-    <catch event="choice_region"> 
-        <assign name="region" expr="_message"/>
-        <goto next="#weather"/>
-    </catch>
-
+ xsi:schemaLocation="http://www.w3.org/2001/vxml https://www.w3.org/TR/voicexml20/vxml.xsd"  version="2.0" >
     <menu id="region"  dtmf="true">
         <prompt>
             To select Tingoli, Press 1
             <break time="500ms"/>
-            To select Region B, Press 2
+            To select Tarkwa, Press 2
+            <break time="500ms"/>
+            To select Accra, Press 3
             <break time="500ms"/>
         </prompt>
-        <choice event="choice_region" message="Tingoli"></choice> 
-        <choice event="choice_region" message="B"></choice>
+        <choice next="http://16.171.45.123:60000/vxml/weather/Tingoli.xml" ></choice> 
+        <choice next="http://16.171.45.123:60000/vxml/weather/Tarkwa.xml" ></choice> 
+        <choice next="http://16.171.45.123:60000/vxml/weather/Accra.xml" ></choice> 
     </menu>
-
-    <form id="weather">
-        <block>
-            <prompt>
-                You have chosen region <value expr="region"/>.
-                <break time="500ms"/>
-                <submit next="'http://16.171.45.123/vxml/weather/' + region" namelist="" method="get"/>
-                <break time="1000ms"/>
-            </prompt>
-            <goto next="#suggestion"/>
-        </block>
-    </form>
-
-    <form id="suggestion">
-        <block>
-            <prompt>
-                Fetching crop suggestion for region <value expr="region"/>.
-                <break time="500ms"/>
-                The crop suggestion in this region should now be fetched by a called to our backend.
-            </prompt>
-        </block>
-    </form>
-
 </vxml>
