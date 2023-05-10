@@ -3,25 +3,13 @@ import json
 import sys
 from suggestion_db import query_suggestion
 import requests
-
+from flask import make_response
 
 app = Flask(__name__)
 api_key = '9548a6803dc1bb21607ca8df16793289'  # replace with your actual API key
-city_name = 'Tingoli'
 
-@app.route('/weather/<city>', methods = ["GET"])
-def get_weather(city:str):
-    city_name = city
-    api_url = f'https://api.openweathermap.org/data/2.5/forecast?q={city_name},GH&cnt=9&appid={api_key}'
-    response = requests.get(api_url)
-    if response.status_code == 200:
-        data = response.json()
-        tomorrow_weather = data["list"][8]["weather"][0]["main"]
-        return jsonify({"weather": tomorrow_weather})
-    else:
-        return 'Error', response.status_code
 
-@app.route('/vxml/weather/<city>', methods = ['GET'])
+@app.route('/vxml/weather/<city>.xml', methods = ['GET'])
 def vxml_get_weather(city: str):
     api_url = f'https://api.openweathermap.org/data/2.5/forecast?q={city},GH&cnt=9&appid={api_key}'
     response = requests.get(api_url)
@@ -33,9 +21,27 @@ def vxml_get_weather(city: str):
 
     with open('templates/weather_response.xml', 'r') as f:
         xml_str = f.read()
-        xml_str = xml_str.format(weather=tomorrow_weather)
-        return xml_str
+        xml_str = xml_str.format(city=city, weather=tomorrow_weather)
+    # Create a response object with the XML data and headers
+    response = make_response(xml_str)
+    response.headers['Content-Type'] = 'application/xml'
+
+    return response
+
+@app.route('/vxml/suggestion/<city>/<weather>.xml', methods = ['GET'])
+def vxml_get_suggestion(city: str, weather: str):
     
+    suggested = 'weed' # TODO: populate db and get from db
+
+    with open('templates/suggestion_response.xml', 'r') as f:
+        xml_str = f.read()
+        xml_str = xml_str.format(city=city, weather=weather, suggested=suggested)
+    # Create a response object with the XML data and headers
+    response = make_response(xml_str)
+    response.headers['Content-Type'] = 'application/xml'
+
+    return response
+
 
 @app.route('/suggestion/<weather>/<plant>/<language>', methods = ["GET"])
 def get_suggestion(weather:int, plant:int, language:int):

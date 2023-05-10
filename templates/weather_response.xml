@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vxml xmlns="http://www.w3.org/2001/vxml"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.w3.org/2001/vxml https://www.w3.org/TR/voicexml21/vxml.xsd" version="2.1" >
-    <form>
+ xsi:schemaLocation="http://www.w3.org/2001/vxml https://www.w3.org/TR/voicexml20/vxml.xsd"  version="2.0" >
+
+    <menu id="suggestion"  dtmf="true">
+    <prompt>The weather in {city} tomorrow is: {weather} </prompt>
+        
+        <prompt>
+            To get crop suggestion in {city}, Press 1
+            <break time="500ms"/>
+            To end the call, Press 2
+            <break time="500ms"/>
+        </prompt>
+        <choice next="http://16.171.45.123:60000/vxml/suggestion/{city}/{weather}.xml" ></choice> 
+        <choice next="#end" ></choice> 
+    </menu>
+
+    <form id="end">
         <block>
-            <prompt>The weather will be: {weather} tomorrow</prompt>
+         <prompt>
+          Thank you for using. Goodbye.
+
+         </prompt>
         </block>
     </form>
+
 </vxml>
