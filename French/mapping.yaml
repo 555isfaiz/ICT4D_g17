@@ -1,0 +1,41 @@
+# main.xml
+For French, press 2.: ForFrench,press2..mp3
+# menu.xml
+To select Accra, Press 3.: ToselectAccra,Press3..mp3
+To select Tarkwa, Press 2.: ToselectTarkwa,Press2..mp3
+To select Tingoli, Press 1.: ToselectTingoli,Press1..mp3
+# suggestion_menu.xml
+To select corn, Press 1.: Toselectcorn,Press1..mp3
+To select millet, Press 2.: Toselectmillet,Press2..mp3
+To select peanuts, Press 3.: Toselectpeanuts,Press3..mp3
+# suggestion_response.xml
+Our suggestion is: Oursuggestionis.mp3
+# weather_response.xml
+The weather tomorrow is: Theweathertomorrowis.mp3
+To get crop suggestion, Press 1.: Togetcropsuggestion,Press1..mp3
+To end the call, Press 2.: Toendthecall,Press2..mp3
+# misc
+Thank you for using. Goodbye.: Thankyouforusing.Goodbye..mp3
+# weather
+Thunderstorm: Thunderstorm.mp3
+Drizzle: Drizzle.mp3
+Rain: Rain.mp3
+Snow: Snow.mp3
+Mist: Mist.mp3
+Smoke: Smoke.mp3
+Haze: Haze.mp3
+Dust: Dust.mp3
+Fog: Fog.mp3
+Sand: Sand.mp3
+Ash: Ash.mp3
+Squall: Squall.mp3
+Tornado: Tornado.mp3
+Clear: Clear.mp3
+Clouds: Clouds.mp3
+# suggestions
+In such a weather, it is important to plant corn seeds at a depth of about 3-5 centimeters, ensuring good seed-to-soil contact while not burying them too deep. This will help the seeds establish quickly and access moisture for germination.: Insuchaweather,itisimportanttoplantcornseedsatadep.mp3
+In such a weather, it is important to treat the seeds with appropriate fungicides or biocontrol agents to protect against seed and soil-borne diseases that can be common in wet conditions.: Insuchaweather,itisimportanttotreattheseedswithapp.mp3
+In such a weather, it is important to ensure the soil has good drainage to prevent waterlogging, as peanuts are susceptible to rot in excessively wet conditions. Raised beds or ridges can help improve drainage.: Insuchaweather,itisimportanttoensurethesoilhasgood.mp3
+In such a weather, it is important to apply organic mulch around the base of cron plants to conserve soil moisture, regulate soil temperature, and suppress weed growth.: Insuchaweather,itisimportanttoapplyorganicmulcharo.mp3
+In such a weather, it is important to increase planting density slightly to provide some shade for the soil and reduce soil surface temperature.: Insuchaweather,itisimportanttoincreaseplantingdens.mp3
+In such a weather, it is important to consider providing temporary shade for young peanuts plants using materials like shade cloth or straw to protect them from excessive heat and sun exposure.: Insuchaweather,itisimportanttoconsiderprovidingtem.mp3
