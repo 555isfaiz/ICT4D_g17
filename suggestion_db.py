@@ -4,22 +4,22 @@ con = sqlite3.connect("suggestion.db")
 
 cur = con.cursor()
 
-# cur.execute("CREATE TABLE suggestion (\
-#             weatherId int, \
-#             plantId int, \
-#             suggest_en varchar(255), \
-#             suggest_akan varchar(255), \
-#             suggest_dagbani varchar(255)\
-#             )")
-# cur.execute("""INSERT INTO suggestion VALUES 
-#             (1, 1, 'suggestion test', 'suggestion test', 'suggestion test'),
-#             (2, 2, 'suggestion test2', 'suggestion test2', 'suggestion test2'),
-#             (3, 3, 'suggestion test3', 'suggestion test3', 'suggestion test3')""")
-
-# con.commit()
-
 def query_suggestion(weather:int, plant:int, language:int) -> str:
-    res = cur.execute(f"SELECT suggest_en FROM suggestion WHERE weatherId={weather} and plantId={plant}")
-    return res.fetchone()
+    if str(weather).startswith('5') or str(weather).startswith('3'):
+        weather = 1
+    else:
+        weather = 2
 
-# print(query_suggestion(1,1,1))
+    if language == 1:
+        column = "suggest_en"
+    else:
+        column = "suggest_fr"
+    res = cur.execute(f"SELECT {column} FROM suggestion WHERE weatherId={weather} and plantId={plant}")
+    return res.fetchone()[0]
+
+print(query_suggestion(1,1,1))
+print(query_suggestion(1,2,1))
+print(query_suggestion(1,3,1))
+print(query_suggestion(2,1,1))
+print(query_suggestion(2,2,1))
+print(query_suggestion(2,3,1))
