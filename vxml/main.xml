@@ -6,18 +6,6 @@
     <menu id="language" dtmf="true">
         <prompt> Hi, Welcome to eye see tea four dee. For English, press 1. For French, press 2. </prompt>
         <choice next="http://16.171.45.123:60000/vxml/static/menu_en.xml"/>
-        <choice next="#franch"/>
+        <choice next="http://16.171.45.123:60000/vxml/static/menu_fr.xml"/>
     </menu>
-    <form id="franch">
-        <block>
-         <prompt xml:lang="fr">
-          épreuve de français. Bonjour! 
-          <!-- Not working rn -->
-          <break time="500ms"/>
-         </prompt>
-         <prompt> Audio test</prompt>
-         <audio src="http://16.171.45.123:60000/french/fetchSuggestion.wav"/>
-        </block>
-       </form>
-
 </vxml>
