@@ -4,11 +4,11 @@
  xsi:schemaLocation="http://www.w3.org/2001/vxml https://www.w3.org/TR/voicexml20/vxml.xsd"  version="2.0" >
     <menu id="region"  dtmf="true">
         <prompt>
-            To select Tingoli, Press 1
+            To select Tingoli, Press 1.
             <break time="500ms"/>
-            To select Tarkwa, Press 2
+            To select Tarkwa, Press 2.
             <break time="500ms"/>
-            To select Accra, Press 3
+            To select Accra, Press 3.
             <break time="500ms"/>
         </prompt>
         <choice next="http://16.171.45.123:60000/vxml/weather/Tingoli.xml" ></choice> 

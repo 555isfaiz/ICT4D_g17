@@ -7,12 +7,12 @@
     <prompt>The weather in {city} tomorrow is: {weather} </prompt>
         
         <prompt>
-            To get crop suggestion in {city}, Press 1
+            To get crop suggestion in {city}, Press 1.
             <break time="500ms"/>
-            To end the call, Press 2
+            To end the call, Press 2.
             <break time="500ms"/>
         </prompt>
-        <choice next="http://16.171.45.123:60000/vxml/suggestion/{city}/{weather}.xml" ></choice> 
+        <choice next="http://16.171.45.123:60000/vxml/{weather}/suggestion_menu.xml" ></choice> 
         <choice next="#end" ></choice> 
     </menu>
 

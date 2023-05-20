@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml xmlns="http://www.w3.org/2001/vxml"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.w3.org/2001/vxml https://www.w3.org/TR/voicexml20/vxml.xsd"  version="2.0" >
+    <menu id="crops" dtmf="true">
+        <prompt>
+                To select corn, Press 1.
+                <break time="500ms"/>
+                To select millet, Press 2.
+                <break time="500ms"/>
+                To select peanuts, Press 3.
+                <break time="500ms"/>
+        </prompt>
+        <choice next="http://16.171.45.123:60000/vxml/suggestion/{weather}/corn.xml"> </choice>
+        <choice next="http://16.171.45.123:60000/vxml/suggestion/{weather}/millet.xml"> </choice>
+        <choice next="http://16.171.45.123:60000/vxml/suggestion/{weather}/peanuts.xml"> </choice>
+    </menu>
+</vxml>

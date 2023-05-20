@@ -10,10 +10,13 @@
     </menu>
     <form id="franch">
         <block>
-         <prompt>
-          Franch is currently not supported because the fucking audio isn't working on this platform
+         <prompt xml:lang="fr">
+          épreuve de français. Bonjour! 
+          <!-- Not working rn -->
           <break time="500ms"/>
          </prompt>
+         <prompt> Audio test</prompt>
+         <audio src="http://16.171.45.123:60000/french/fetchSuggestion.wav"/>
         </block>
        </form>
 
