@@ -28,6 +28,16 @@ def vxml_get_weather(city: str):
 
     return response
 
+@app.route('/vxml/main.xml', methods = ['GET'])
+def vxml_main():
+    with open('vxml/main.xml', 'r') as f:
+        xml_str = f.read()
+    response = make_response(xml_str)
+    response.headers['Content-Type'] = 'application/xml'
+
+    return response
+
+
 @app.route('/vxml/suggestion/<city>/<weather>.xml', methods = ['GET'])
 def vxml_get_suggestion(city: str, weather: str):
     
