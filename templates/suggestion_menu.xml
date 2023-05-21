@@ -11,8 +11,8 @@
                 To select peanuts, Press 3.
                 <break time="500ms"/>
         </prompt>
-        <choice next="http://16.171.45.123:60000/vxml/suggestion/{weather}/corn.xml"> </choice>
-        <choice next="http://16.171.45.123:60000/vxml/suggestion/{weather}/millet.xml"> </choice>
-        <choice next="http://16.171.45.123:60000/vxml/suggestion/{weather}/peanuts.xml"> </choice>
+        <choice next="http://16.171.45.123:60000/vxml/en/suggestion/{weather}/corn.xml"> </choice>
+        <choice next="http://16.171.45.123:60000/vxml/en/suggestion/{weather}/millet.xml"> </choice>
+        <choice next="http://16.171.45.123:60000/vxml/en/suggestion/{weather}/peanuts.xml"> </choice>
     </menu>
 </vxml>

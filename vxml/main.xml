@@ -4,7 +4,8 @@
  xsi:schemaLocation="http://www.w3.org/2001/vxml https://www.w3.org/TR/voicexml20/vxml.xsd"  version="2.0" >
 
     <menu id="language" dtmf="true">
-        <prompt> Hi, Welcome to eye see tea four dee. For English, press 1. For French, press 2. </prompt>
+        <prompt> Hi, Welcome to eye see tea four dee. For English, press 1 </prompt>
+        <audio src="https://ict4d-vxml-tester-2023.s3.amazonaws.com/media/uploads/sj/99/ForFrenchpress2..wav"/>
         <choice next="http://16.171.45.123:60000/vxml/static/menu_en.xml"/>
         <choice next="http://16.171.45.123:60000/vxml/static/menu_fr.xml"/>
     </menu>

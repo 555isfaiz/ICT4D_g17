@@ -1,15 +1,15 @@
 import sqlite3
 
-con = sqlite3.connect("suggestion.db")
 
-cur = con.cursor()
 
 def query_suggestion(weather:int, plant:int, language:int) -> str:
-    if str(weather).startswith('5') or str(weather).startswith('3'):
-        weather = 1
-    else:
-        weather = 2
 
+    con = sqlite3.connect("suggestion.db")
+
+    cur = con.cursor()
+
+    # 5xx is rain, 3xx is drizzle
+    # so 1 is rain, 2 is other(sun)
     if language == 1:
         column = "suggest_en"
     else:

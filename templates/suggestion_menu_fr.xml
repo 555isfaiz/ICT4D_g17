@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vxml xmlns="http://www.w3.org/2001/vxml"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.w3.org/2001/vxml https://www.w3.org/TR/voicexml20/vxml.xsd"  version="2.0" >
+    <menu id="crops" dtmf="true">
+        <audio src="https://ict4d-vxml-tester-2023.s3.amazonaws.com/media/uploads/sj/99/ToselectcornPress1..wav"/>
+        <audio src="https://ict4d-vxml-tester-2023.s3.amazonaws.com/media/uploads/sj/99/ToselectmilletPress2..wav"/>
+        <audio src="https://ict4d-vxml-tester-2023.s3.amazonaws.com/media/uploads/sj/99/ToselectAccraPress3..wav"/>
+        <choice next="http://16.171.45.123:60000/vxml/fr/suggestion/{weather}/corn.xml"> </choice>
+        <choice next="http://16.171.45.123:60000/vxml/fr/suggestion/{weather}/millet.xml"> </choice>
+        <choice next="http://16.171.45.123:60000/vxml/fr/suggestion/{weather}/peanuts.xml"> </choice>
+    </menu>
+</vxml>
